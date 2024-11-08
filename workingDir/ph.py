@@ -84,5 +84,3 @@ def output_hosts():
         f.write('\n# Hosts End \n\n')
 if __name__ == '__main__':
     output_hosts()
-        # os.system("ipconfig /flushdns")
-        self.saveRouterosFile()
