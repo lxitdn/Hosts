@@ -53,7 +53,19 @@ def gen_host():
         list = get_ip_list(domain.strip())
         for ip in list:
             yield (ip, domain)
-        
+
+
+def saveRouterosFile(self):
+        ''' 应网友需求，导出一份 routeros 格式的hosts文件 '''
+        today = datetime.date.today()
+        with open("hosts-routeros.txt", "w") as f:
+            f.write("#*********************github " +
+                    str(today) + " update********************\n")
+            f.write(
+                "#******* get latest hosts: http://blog.yoqi.me/lyq/16489.html\n")
+            for key in self.addr2ip:
+                f.write("add address=" + self.addr2ip[key] + " name="+ key + "\n")
+      
 
 def get_time(format_string="%Y-%m-%d %H:%M:%S"):#"%Y-%m-%d %H:%M:%S"
     utc_dt = datetime.utcnow().replace(tzinfo=timezone.utc)
