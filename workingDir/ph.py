@@ -58,7 +58,7 @@ def gen_host():
 def saveRouterosFile(self):
         ''' 应网友需求，导出一份 routeros 格式的hosts文件 '''
         today = datetime.date.today()
-        with open("hosts-routeros.txt", "w") as f:
+        with open("routeros.txt", "w") as f:
             f.write("#*********************github " +
                     str(today) + " update********************\n")
             f.write(
